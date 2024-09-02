@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #define MAX 100
+int i,j;
 
 void addElement(int arr[], int *n, int value) {
     if (*n >= MAX) {
@@ -17,7 +18,7 @@ void deleteElement(int arr[], int *n, int index) {
         printf("Invalid index.\n");
         return;
     }
-    for (int i = index; i < (*n) - 1; i++) {
+    for (i = index; i < (*n) - 1; i++) {
         arr[i] = arr[i + 1];
     }
     (*n)--;
@@ -34,9 +35,9 @@ void modifyElement(int arr[], int n, int index, int newValue) {
 void sortArray(int arr[], int n) 
 {
     int temp;
-    for (int i = 0; i < n - 1; i++) 
+    for (i = 0; i < n - 1; i++) 
 	{
-        for (int j = i + 1; j < n; j++) 
+        for (j = i + 1; j < n; j++) 
 		{
             if (arr[i] > arr[j]) {
                 temp = arr[i];
@@ -49,8 +50,10 @@ void sortArray(int arr[], int n)
 
 void simpleSearch(int arr[], int n, int key) {
     int found = 0;
-    for (int i = 0; i < n; i++) {
-        if (arr[i] == key) {
+    for (i = 0; i < n; i++)
+	{
+        if (arr[i] == key)
+		{
             printf("Element %d found at index %d.\n", key, i);
             found = 1;
             break;
@@ -85,7 +88,8 @@ void binarySearch(int arr[], int n, int key) {
 
 void displayArray(int arr[], int n) {
     printf("Array elements:\n");
-    for (int i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) 
+	{
         printf("%d ", arr[i]);
     }
     printf("\n");
